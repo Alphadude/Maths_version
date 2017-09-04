@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Maths</string>
+    <string name="home_page_text">Vun Maths Vol 1 is a self-studying maths app that helps you become good at mathematics with so much ease and fun!</string>
+    <string name="btn_next">Next</string>
+    <string name="home_page_text_2">An app for Junior High(Secondary) School Students(\"aged 10 - 15\") and any other interested persons above 15 who meeds a self-teaching maths app</string>
+    <string name="start">Start</string>
+</resources>
