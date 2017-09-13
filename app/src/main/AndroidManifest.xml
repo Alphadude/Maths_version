@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rudigo.android.maths">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- This checks for the network state of the device -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProgramActivity"></activity>
+        <activity android:name=".FoundationProgramTestFragment" />
+        <activity android:name=".JumpTestActivity" />
+        <activity android:name=".FoundationProgramInstructionFragment" />
+        <activity android:name=".BlcLesson4bActivity" />
+        <activity android:name=".FoundationProgramModules" />
+        <activity android:name=".Module1Activity" />
+        <activity android:name=".BeginnerLevelCounting" />
+        <activity android:name=".InstructionActivity" />
+        <activity android:name=".Module2Activity" />
+        <activity android:name=".BeginnerLevelCountingInstruction" />
+        <activity android:name=".BlcLesson2Activity" />
+        <activity android:name=".BlcTest2Activity" />
+        <activity android:name=".BlcLesson4Test"></activity>
     </application>
 
 </manifest>

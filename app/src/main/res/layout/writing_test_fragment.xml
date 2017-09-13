@@ -4,44 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
     android:orientation="vertical"
-    android:id="@+id/frag_activity"
-    tools:context="com.rudigo.android.maths.MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+    tools:context="com.rudigo.android.maths.BeginnerLevelCounting">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/step"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
+        android:gravity="center"
         android:padding="4dp"
-        android:text="@string/home_page_text"
-        android:textSize="18sp" />
+        android:text="Writing Number Test"
+        android:textSize="23sp"
+        android:textStyle="bold" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/writing_test_check_Button"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:text="@string/btn_next" />
+            android:layout_marginBottom="16dp"
+            android:text="Check"
+            android:textAllCaps="false" />
+
+
     </FrameLayout>
+
+
 </LinearLayout>

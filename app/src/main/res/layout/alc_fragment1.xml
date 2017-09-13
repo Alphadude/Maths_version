@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rudigo.android.maths.BeginnerLevelCounting">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        tools:context="com.rudigo.android.maths.BeginnerLevelCounting">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="ALC Lesson"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/alclessond_text_body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/alclessond_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/alclessondtext_body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/alc_lessond_step_text"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/alclessondtext_body3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/maths_build_up"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/alclessondtext_body4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/place_value_system"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/alclessondtext_body5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/the_inbuilt_of_numbers_in_numbers"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/alclessondtext_body6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif"
+            android:padding="4dp"
+            android:text="@string/certain_trends"
+            android:textSize="18sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/alcContinueButton1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="16dp"
+                android:text="@string/continue_text"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/alcPreviousButton1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="16dp"
+                android:text="Previous"
+                android:textAllCaps="false"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</ScrollView>

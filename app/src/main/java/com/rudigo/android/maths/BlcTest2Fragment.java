@@ -29,7 +29,8 @@ import static android.app.Activity.RESULT_OK;
  * Created by user on 9/4/2017.
  */
 
-public class BlcTestFragment extends Fragment {
+public class BlcTest2Fragment extends Fragment {
+
 
     //connectivity manager instance
     private ConnectivityManager mConnMgr;
@@ -43,12 +44,15 @@ public class BlcTestFragment extends Fragment {
     //Broadcast Receiver instance
     public NetworkReceiver mReceiver;
 
+    private final int REQUEST_SPEECH_CODE = 143;
+
+
+
+
+
     //These variables are used to display the fragments
     Fragment frag;
     FragmentTransaction fragTransaction;
-
-    private final int REQUEST_SPEECH_CODE = 143;
-
 
     private ArrayAdapter<Integer> numberAdapter;
 
@@ -57,21 +61,17 @@ public class BlcTestFragment extends Fragment {
 
     private ArrayList<String> numberText;
 
-    public BlcTestFragment() {
-    }
 
+    public BlcTest2Fragment() {
+    }
 
     //This method is used to inflate the fragment layout when it's called
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         View rootView = inflater.inflate(R.layout.blc_test_fragment, container, false);
-
-        final Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
-        final Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
-
         mConnMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-       activeNetwork = mConnMgr.getActiveNetworkInfo();
+        activeNetwork = mConnMgr.getActiveNetworkInfo();
 //        isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
         //instantiates the Network Events Broadcast Receiver
@@ -81,6 +81,11 @@ public class BlcTestFragment extends Fragment {
         //Broadcast receiver's onReceive will be called once a network happens
         getActivity().registerReceiver(mReceiver, filter);
 
+
+
+
+        final Button repeatLesson2Button = rootView.findViewById(R.id.repeatLesson1Btn);
+        final Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
 
         numbers = new ArrayList<>();
         for (int i = 1; i <= 50; ++i) {
@@ -138,115 +143,61 @@ public class BlcTestFragment extends Fragment {
         numberText.add("forty-eight");
         numberText.add("forty-nine");
         numberText.add("fifty");
-        numberText.add("one");
-        numberText.add("two");
-        numberText.add("three");
-        numberText.add("four");
-        numberText.add("five");
-        numberText.add("six");
-        numberText.add("seven");
-        numberText.add("eight");
-        numberText.add("nine");
-        numberText.add("ten");
-        numberText.add("eleven");
-        numberText.add("twelve");
-        numberText.add("thirteen");
-        numberText.add("fourteen");
-        numberText.add("fifteen");
-        numberText.add("sixteen");
-        numberText.add("seventeen");
-        numberText.add("eighteen");
-        numberText.add("nineteen");
-        numberText.add("twenty");
-        numberText.add("twenty-one");
-        numberText.add("twenty-two");
-        numberText.add("twenty-three");
-        numberText.add("twenty-four");
-        numberText.add("twenty-five");
-        numberText.add("twenty-six");
-        numberText.add("twenty-seven");
-        numberText.add("twenty-eight");
-        numberText.add("twenty-nine");
-        numberText.add("thirty");
-        numberText.add("thirty-one");
-        numberText.add("thirty-two");
-        numberText.add("thirty-three");
-        numberText.add("thirty-four");
-        numberText.add("thirty-five");
-        numberText.add("thirty-six");
-        numberText.add("thirty-seven");
-        numberText.add("thirty-eight");
-        numberText.add("thirty-nine");
-        numberText.add("forty");
-        numberText.add("forty-one");
-        numberText.add("forty-two");
-        numberText.add("forty-three");
-        numberText.add("forty-four");
-        numberText.add("forty-five");
-        numberText.add("forty-six");
-        numberText.add("forty-seven");
-        numberText.add("forty-eight");
-        numberText.add("forty-nine");
-        numberText.add("fifty");
 
         numberAdapter = new ArrayAdapter<Integer>(getContext(), android.R.layout.simple_list_item_1, numbers);
         gridView = rootView.findViewById(R.id.test_gridView);
         gridView.setAdapter(numberAdapter);
 
-        repeatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //go back to lesson 1
-                Intent intent = new Intent(getActivity(), BeginnerLevelCounting.class);
-                startActivity(intent);
+        repeatLesson2Button.setText("Repeat Lesson 2");
 
-            }
-        });
+        if (getActivity().getIntent().hasExtra("changeBtn")) {
+            continueButton.setText("Start a  New Lesson");
+        }
 
-        continueButton.setOnClickListener(new View.OnClickListener() {
+        repeatLesson2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //go to Lesson 2
                 Intent intent = new Intent(getActivity(), BlcLesson2Activity.class);
                 startActivity(intent);
             }
         });
 
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (getActivity().getIntent().hasExtra("changeBtn")) {
+                    //go to BlcLesson4aFragment
+                    frag = new BlcLesson4aFragment();
+                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.addToBackStack(null);
+                    fragTransaction.commit();
+                } else {
+                    frag = new BlcLesson3aFragment();
+                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.addToBackStack(null);
+                    fragTransaction.commit();
+                }
 
+            }
+        });
         return rootView;
     }
 
-    private void recordSpeech() {
+    private void recordSpeech(){
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak the number clicked");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Speak the number clicked");
 
         try {
 
             startActivityForResult(intent, REQUEST_SPEECH_CODE);
 
-        } catch (ActivityNotFoundException tim) {
+        }catch(ActivityNotFoundException tim){
             Toast.makeText(getContext(), "You device does not support speech to text", Toast.LENGTH_SHORT).show();
 
         }
 
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case REQUEST_SPEECH_CODE:
-                if (resultCode == RESULT_OK && data != null) {
-                    ArrayList<String> voiceInText = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    Toast.makeText(getContext(), voiceInText.get(0), Toast.LENGTH_SHORT).show();
-
-                }
-                break;
-
-        }
     }
 
 
@@ -255,7 +206,7 @@ public class BlcTestFragment extends Fragment {
 //        super.onDestroy();
 //        //unRegisters the broadcast receiver whent the activity goes to the background
 //        if (mReceiver != null) {
-//            unregisterReceiver(mReceiver);
+//            getActivity().unregisterReceiver(mReceiver);
 //        }
 //    }
 
@@ -268,6 +219,22 @@ public class BlcTestFragment extends Fragment {
         }
     }
 
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+            case REQUEST_SPEECH_CODE:
+                if(resultCode == RESULT_OK && data !=null ){
+                    ArrayList<String> voiceInText =data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    Toast.makeText(getContext(), voiceInText.get(0), Toast.LENGTH_SHORT).show();
+
+                }
+                break;
+
+        }
+    }
     //Broadcast receiver whose onReceive will be called whenever a network event such as
     //network disconnected or network connected takes place
     //The Broadcast Receiver is registered in the onCreate with Intent action CONNECTIVITY_ACTION
@@ -277,29 +244,33 @@ public class BlcTestFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             //get active network info structure
 
-                isNetworkAvailable =activeNetwork != null &&(
-                        mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
-                                mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
+            isNetworkAvailable =activeNetwork != null &&(
+                    mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
+                            mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
 
-                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        if (isNetworkAvailable) {
-                            Toast.makeText(getContext(), "Network Available", Toast.LENGTH_SHORT).show();
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (isNetworkAvailable) {
+                        Toast.makeText(getContext(), "Network Available", Toast.LENGTH_SHORT).show();
 
-                            recordSpeech();
-                            //speech to text
-                            Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
-                            //increment if text matches
+                        recordSpeech();
+                        //speech to text
+                        Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
+                        //increment if text matches
 
-                        } else {
-                            Toast.makeText(getContext(), "Network not available", Toast.LENGTH_SHORT).show();
-
-                        }
+                    } else {
+                        Toast.makeText(getContext(), "Network not available", Toast.LENGTH_SHORT).show();
 
                     }
-                });
+
+                }
+            });
 
         }
     }
 }
+
+
+
+

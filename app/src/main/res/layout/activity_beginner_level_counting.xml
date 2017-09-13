@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="vertical"
+    tools:context="com.rudigo.android.maths.BeginnerLevelCounting">
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="@string/blc_lesson_1"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/text_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="@string/blc_rule"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/blcNumberText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:onClick="textOnclick"
+        android:padding="4dp"
+        android:text="@string/number"
+        android:textColor="@color/colorAccent"
+        android:textSize="100sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/repeatButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:text="@string/repeat"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/blcTestBtn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_margin="16dp"
+            android:text="@string/test"
+            android:textAllCaps="false"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+
+</LinearLayout>

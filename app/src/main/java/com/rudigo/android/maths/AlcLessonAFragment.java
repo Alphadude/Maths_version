@@ -12,31 +12,38 @@ import android.widget.Button;
  * Created by user on 9/4/2017.
  */
 
-public class HomePage1 extends Fragment {
+public class AlcLessonAFragment extends Fragment {
     //These variables are used to display the fragments
     Fragment frag;
     FragmentTransaction fragTransaction;
 
 
-    public HomePage1() {
+    public AlcLessonAFragment() {
     }
 
     //This method is used to inflate the fragment layout when it's called
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
-        View rootView = inflater.inflate(R.layout.activity_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.alc_fragment, container, false);
 
-        final Button nextButton = rootView.findViewById(R.id.button);
+        Button previousButton = rootView.findViewById(R.id.alcPreviousButton);
+        Button continueButton = rootView.findViewById(R.id.alcContinueButton);
 
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        previousButton.setVisibility(View.GONE);
+
+
+        continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                frag = new HomePage2();
+             //   Toast.makeText(getContext(), "ALC", Toast.LENGTH_SHORT).show();
+                frag = new AlcLessonBFragment();
                 fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
-                fragTransaction.commit();
                 fragTransaction.addToBackStack(null);
+                fragTransaction.commit();
+
             }
         });
+
         return rootView;
     }
 

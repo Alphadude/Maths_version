@@ -4,4 +4,89 @@
     <string name="btn_next">Next</string>
     <string name="home_page_text_2">An app for Junior High(Secondary) School Students(\"aged 10 - 15\") and any other interested persons above 15 who meeds a self-teaching maths app</string>
     <string name="start">Start</string>
+    <string name="previous_button">previous</string>
+    <string name="foundation_programs">Foundation Programs</string>
+    <string name="main_programs">Main Programs</string>
+    <string name="foundation_program_detaial">The foundation program can be skipped if you have a good knowledge of the following math concepts:
+    </string>
+    <string name="tests_text">To skip the foundation programs, do the tests that follows. If you do well, you will move onto the main program</string>
+    <string name="take_test">Take Test</string>
+    <string name="foundation_program_dummy_test">Foundation Program Dummy Test</string>
+    <string name="submit">Submit</string>
+    <string name="essence_of_the_foundation_programs">Essence of the Foundation Programs</string>
+    <string name="foundation_program_tests">Foundation Program Tests</string>
+    <string name="basic_operations">Basic Operations</string>
+    <string name="development_of_number_systems">Development of Number Systems</string>
+    <string name="number_grouping_and_arrangement">Number Grouping and Arrangement</string>
+    <string name="counting_writing_and_spelling_of_numbers">Counting, Writing and Spelling of Numbers</string>
+    <string name="test_question">Spell the number 10</string>
+    <string name="continue_text">Continue</string>
+    <string name="jump_test">Jump Test</string>
+    <string name="module1_header">Counting, Writing and Spelling of Numbers</string>
+    <string name="test">Test</string>
+    <string name="beginner_level">Beginner Level</string>
+    <string name="intermediate_level">Intermediate Level</string>
+    <string name="advanced_level">Advanced Level</string>
+    <string name="beginner_rule">* If you have never counted in English before or you really have a challenge with counting, click the Beginner Level</string>
+    <string name="intermediate_rule">* If you can count from 1-100 but have a challenge counting to a thousand, click the Intermediate level</string>
+    <string name="avanced_rule">If you can count count from 1-1000 but have difficulty in counting to a million, click the Avanced level</string>
+    <string name="blc_lesson_1">BLC Lesson 1</string>
+    <string name="blc_rule">Tap the numbers as they appear on the screen, listen carefully and say the numbers aloud. Say exactly what you heard!</string>
+    <string name="repeat">Repeat</string>
+    <string name="number">0</string>
+    <string name="blc_counting_test_instruction">Beginning Level Counting Test 1 Instruction</string>
+    <string name="guidelines">Follow the guidelines and instructions in this app carefully. Don\'t try to plat smart. Don\'t assess yourself wrongly and jump to a level that is not yet recommended for you. Patience is a virtue</string>
+    <string name="blc_lesson_2">Lesson 2</string>
+    <string name="lesson_2_instruction">Again, you tap the numbers in the order they appear on the screen. Listen carefully and say the numbers aloud.Say exactly what you heard.</string>
+    <string name="congratulations_text">Congratulations! You have entered the intermediate level. At this level, we shall teach you how to count from
+    one hundred to one thousand. I hope you did not assess yourself wrongly just to get jump to this level. If you did, you have yourself
+    to blame because the lessons at this level are dependent on your knowledge of the beginner level </string>
+    <string name="lesson2a_text">What observations or maths build-up did you observe as you went through ILC lesson 1A.
+    Try and make a list of them and compare them with the ones on the next screen</string>
+    <string name="lesson_2d_text">Again, you have to go back to ILC lesson 1A follow the instructions given. Also do make sure
+    you make sure you take note of the observations made from it and the maths build-ups. Take the test again and tap the
+    START A NEW LESSON button</string>
+    <string name="lesson_3a_text">In this activity you will be counting from 1 to a thousand each time you press the
+    continue button, a set of hundred numbers will be on the screen until you reach 1000.
+    You can copy them out and ask someone tohelp you or use the app and learn how to count to a thousand</string>
+    <string name="ilc_test_instruction_text1">In this test you are to assess yourself. Please your knowledge of the intermediate level counting is
+    absolutely what you will apply in the advanced level. So the ball is in your court. Haha!</string>
+    <string name="ilcTestInstruction_text2">The following sets of numbers will be on the screen one after the other.
+        You are to call the name of the number and the voice recognition will pick it and/or let someone assess you and tell you how well you did</string>
+    <string name="alc_congrats_text">Congratulations once more on your emergence at the advanced level. This level depends much on how
+    effective your intermediate level was. You can still go back and do that or you proceed. At this level, we shall teach you how to count from one thousand to one million</string>
+    <string name="alc_lesson_text">As we began learning how to count, we started from one to hundred. After hundred, we have one hundred and one (101),
+    one hundred and two(102) to one hundred and ninety-nind(199), then the next number, "one hundred and one hundred" as it supposed to be read
+    but read as two hundred(200).
+    *if the naming sequence continues then we have 201, 202 to 299 then 300. Then 301, 302, to 399 then 400. Thesame with 500, 600, 700, 800 and then 899, 900.
+    then 901, 902, to 999 then we have 1000. Just as we have observed earlier.</string>
+    <string name="alclessonb_text">I hope you found your last lesson interesting. Obviously, it is difficult to teach counting,
+    especially counting from 1000 to 1,000,000 without being physically present with the learner. If the last lesson was not adequate,
+    you can download our app on Advanced counting to help you. We have some video clips to help you and others to make advanced counting pleasurable.
+    Moreover, the remaining part of program 1 can still fortify your  counting skill.
+    The continue button will take you to another lesson where we shall begin to teach you how to write numbers correctly, but we advise that you press the previous button and repeat the lesson.</string>
+    <string name="alclessonc_text">In this lesson, you will learn how to write numbers correctly and in the most acceptable order.
+    You may ask, "Is this different from our previous lessons?" Yes, it is. One may know how to count numbers but does not know how to write them correctly.
+    Though in our previous lessons, in the course of learning how to count, you must have seen how the numbers were written.
+    But that will only help to make this lesson pretty easier for you. From experience, until the learner writes these numbers repeatedly, you may soon
+    forget how the number structure look like and over time forget how to count. </string>
+    <string name="alclessond_text">In  learning how to write from one to a million, we shall take you through some steps. In this lesson,
+    you may need an external coach to help you or go back to prevous lessons and copy from the referred pages. </string>
+    <string name="alc_lessond_step_text">Step 1: Without skipping any number, write from 1 to 100 following the format in lesson ___(Note: The \'tens\' must be at the rightmost column).</string>
+    <string name="the_inbuilt_of_numbers_in_numbers">* The inbuilt of numbers in numbers</string>
+    <string name="place_value_system">* The Place Value System of numbers</string>
+    <string name="certain_trends">* Certain trends that will help grease your addition and subtraction skills</string>
+    <string name="maths_build_up">Maths Build up: Writing numbers in this format will give you insight to the following maths concepts:</string>
+    <string name="alc_step1_text">Using the text field below, you are to write from 1 to 100, click the add Number button when you are done</string>
+    <string name="alc_step3_text">Without skipping any number, write from 1000 to 2000 using the format below. You can copy from lesson__. Remember to say the numbers before you write.</string>
+    <string name="alc_step2_text">Without skipping any number, write from 1 to 1000 using thesame format in step 1. Writing the number in order is key!</string>
+    <string name="alc_step4_text">Using 50 as the writing pace, write from 1000 to 10000 using the format below. Caution! As you write using the pace of 50, in your imagination let the other numbers be inclusive. Write them in your heart. For instance, the first two numbers beloware 1050 and 1100, that means that you write 1051 to 1099 in your heart</string>
+    <string name="alc_step5_text">Using 1000 as the writing pace, write from 10,000 to 100,000 as shown below</string>
+    <string name="alc_step6_text">Using 50,000 as the writing pace, write from 100,000 to a million as shown below</string>
+    <string name="alc_step7_text">Using 100,000 as the writing pace, write from 100,000 to a million as shown below</string>
+    <string name="spelling_text">To spell numbers from one to a million, you just need to know the spellings of thirty(30) numbers and observe the rules I shall give to you. The thirty numbers are:</string>
+    <string name="spelling_text2">In the next ten minutes, try and master the spellings of the aforementioned 30 numbers. Take note of the spellings of theseeight numbers: 11,12,13,15,20,30,40 and 50. Someone that is not careful with these numbers may likely spell them wrongly. For instance, 40 is most times wrongly spelt as "Fourty" instead of "Forty"</string>
+    <string name="text">Having known how to write numbers from 1 to 1,000,000. To spell numbers implies your writing in words the names of numbers you already know. The names of numbers below 1,000,000 would always be one or a mixture of two or more of the names of the 30 numbers given earlier with the word "and". The following rules will help you spell any number below a million correctly </string>
+
+
 </resources>

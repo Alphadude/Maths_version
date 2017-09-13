@@ -29,7 +29,8 @@ import static android.app.Activity.RESULT_OK;
  * Created by user on 9/4/2017.
  */
 
-public class BlcTestFragment extends Fragment {
+
+public class BlcTest4Fragment extends Fragment {
 
     //connectivity manager instance
     private ConnectivityManager mConnMgr;
@@ -57,7 +58,7 @@ public class BlcTestFragment extends Fragment {
 
     private ArrayList<String> numberText;
 
-    public BlcTestFragment() {
+    public BlcTest4Fragment() {
     }
 
 
@@ -69,9 +70,11 @@ public class BlcTestFragment extends Fragment {
         final Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
         final Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
 
+        repeatButton.setText("Repeat Lesson 4");
+
         mConnMgr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-       activeNetwork = mConnMgr.getActiveNetworkInfo();
+        activeNetwork = mConnMgr.getActiveNetworkInfo();
 //        isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
         //instantiates the Network Events Broadcast Receiver
@@ -83,111 +86,61 @@ public class BlcTestFragment extends Fragment {
 
 
         numbers = new ArrayList<>();
-        for (int i = 1; i <= 50; ++i) {
+        for (int i = 51; i <= 100; ++i) {
             numbers.add(i);
         }
 
         numberText = new ArrayList<>();
-        numberText.add("one");
-        numberText.add("two");
-        numberText.add("three");
-        numberText.add("four");
-        numberText.add("five");
-        numberText.add("six");
-        numberText.add("seven");
-        numberText.add("eight");
-        numberText.add("nine");
-        numberText.add("ten");
-        numberText.add("eleven");
-        numberText.add("twelve");
-        numberText.add("thirteen");
-        numberText.add("fourteen");
-        numberText.add("fifteen");
-        numberText.add("sixteen");
-        numberText.add("seventeen");
-        numberText.add("eighteen");
-        numberText.add("nineteen");
-        numberText.add("twenty");
-        numberText.add("twenty-one");
-        numberText.add("twenty-two");
-        numberText.add("twenty-three");
-        numberText.add("twenty-four");
-        numberText.add("twenty-five");
-        numberText.add("twenty-six");
-        numberText.add("twenty-seven");
-        numberText.add("twenty-eight");
-        numberText.add("twenty-nine");
-        numberText.add("thirty");
-        numberText.add("thirty-one");
-        numberText.add("thirty-two");
-        numberText.add("thirty-three");
-        numberText.add("thirty-four");
-        numberText.add("thirty-five");
-        numberText.add("thirty-six");
-        numberText.add("thirty-seven");
-        numberText.add("thirty-eight");
-        numberText.add("thirty-nine");
-        numberText.add("forty");
-        numberText.add("forty-one");
-        numberText.add("forty-two");
-        numberText.add("forty-three");
-        numberText.add("forty-four");
-        numberText.add("forty-five");
-        numberText.add("forty-six");
-        numberText.add("forty-seven");
-        numberText.add("forty-eight");
-        numberText.add("forty-nine");
-        numberText.add("fifty");
-        numberText.add("one");
-        numberText.add("two");
-        numberText.add("three");
-        numberText.add("four");
-        numberText.add("five");
-        numberText.add("six");
-        numberText.add("seven");
-        numberText.add("eight");
-        numberText.add("nine");
-        numberText.add("ten");
-        numberText.add("eleven");
-        numberText.add("twelve");
-        numberText.add("thirteen");
-        numberText.add("fourteen");
-        numberText.add("fifteen");
-        numberText.add("sixteen");
-        numberText.add("seventeen");
-        numberText.add("eighteen");
-        numberText.add("nineteen");
-        numberText.add("twenty");
-        numberText.add("twenty-one");
-        numberText.add("twenty-two");
-        numberText.add("twenty-three");
-        numberText.add("twenty-four");
-        numberText.add("twenty-five");
-        numberText.add("twenty-six");
-        numberText.add("twenty-seven");
-        numberText.add("twenty-eight");
-        numberText.add("twenty-nine");
-        numberText.add("thirty");
-        numberText.add("thirty-one");
-        numberText.add("thirty-two");
-        numberText.add("thirty-three");
-        numberText.add("thirty-four");
-        numberText.add("thirty-five");
-        numberText.add("thirty-six");
-        numberText.add("thirty-seven");
-        numberText.add("thirty-eight");
-        numberText.add("thirty-nine");
-        numberText.add("forty");
-        numberText.add("forty-one");
-        numberText.add("forty-two");
-        numberText.add("forty-three");
-        numberText.add("forty-four");
-        numberText.add("forty-five");
-        numberText.add("forty-six");
-        numberText.add("forty-seven");
-        numberText.add("forty-eight");
-        numberText.add("forty-nine");
-        numberText.add("fifty");
+        numberText.add("fifty-one");
+        numberText.add("fifty-two");
+        numberText.add("fifty-three");
+        numberText.add("fifty-four");
+        numberText.add("fifty-five");
+        numberText.add("fifty-six");
+        numberText.add("fifty-seven");
+        numberText.add("fifty-eight");
+        numberText.add("fifty-nine");
+        numberText.add("sixty");
+        numberText.add("sixty-one"); //"\"sixty-one\""
+        numberText.add("sixty-two");
+        numberText.add("sixty-three");
+        numberText.add("sixty-four");
+        numberText.add("sixty-five");
+        numberText.add("sixty-six");
+        numberText.add("sixty-seven");
+        numberText.add("sixty-eigth");
+        numberText.add("sixty-nine");
+        numberText.add("seventy");
+        numberText.add("seventy-one");
+        numberText.add("seventy-two");
+        numberText.add("seventy-three");
+        numberText.add("seventy-four");
+        numberText.add("seventy-five");
+        numberText.add("seventy-six");
+        numberText.add("seventy-seven");
+        numberText.add("seventy-eight");
+        numberText.add("seventy-nine");
+        numberText.add("eighty");
+        numberText.add("eighty-one");
+        numberText.add("eighty-two");
+        numberText.add("eighty-three");
+        numberText.add("eighty-four");
+        numberText.add("eighty-five");
+        numberText.add("eighty-six");
+        numberText.add("eighty-seven");
+        numberText.add("eighty-eight");
+        numberText.add("eighty-nine");
+        numberText.add("ninety");
+        numberText.add("ninety-one");
+        numberText.add("ninety-two");
+        numberText.add("ninety-three");
+        numberText.add("ninety-four");
+        numberText.add("ninety-five");
+        numberText.add("ninety-six");
+        numberText.add("ninety-seven");
+        numberText.add("ninety-eight");
+        numberText.add("ninety-nine");
+        numberText.add("hundred");
 
         numberAdapter = new ArrayAdapter<Integer>(getContext(), android.R.layout.simple_list_item_1, numbers);
         gridView = rootView.findViewById(R.id.test_gridView);
@@ -196,8 +149,8 @@ public class BlcTestFragment extends Fragment {
         repeatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //go back to lesson 1
-                Intent intent = new Intent(getActivity(), BeginnerLevelCounting.class);
+                //repeat lesson 4b
+                Intent intent = new Intent(getActivity(), BlcLesson4bActivity.class);
                 startActivity(intent);
 
             }
@@ -206,9 +159,17 @@ public class BlcTestFragment extends Fragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //goto fragment...
                 //go to Lesson 2
-                Intent intent = new Intent(getActivity(), BlcLesson2Activity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), BlcLesson2Activity.class);
+//                startActivity(intent);
+
+              //  Toast.makeText(getContext(),"Goto  25", Toast.LENGTH_SHORT).show();
+                frag = new BlcLesson4cFragment();
+                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                fragTransaction.addToBackStack(null);
+                fragTransaction.commit();
+
             }
         });
 
@@ -277,29 +238,31 @@ public class BlcTestFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             //get active network info structure
 
-                isNetworkAvailable =activeNetwork != null &&(
-                        mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
-                                mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
+            isNetworkAvailable =activeNetwork != null &&(
+                    mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
+                            mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
 
-                gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        if (isNetworkAvailable) {
-                            Toast.makeText(getContext(), "Network Available", Toast.LENGTH_SHORT).show();
+            gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    if (isNetworkAvailable) {
+                        Toast.makeText(getContext(), "Network Available", Toast.LENGTH_SHORT).show();
 
-                            recordSpeech();
-                            //speech to text
-                            Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
-                            //increment if text matches
+                        recordSpeech();
+                        //speech to text
+                        Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
+                        //increment if text matches
 
-                        } else {
-                            Toast.makeText(getContext(), "Network not available", Toast.LENGTH_SHORT).show();
-
-                        }
+                    } else {
+                        Toast.makeText(getContext(), "Network not available", Toast.LENGTH_SHORT).show();
 
                     }
-                });
+
+                }
+            });
 
         }
     }
 }
+
+

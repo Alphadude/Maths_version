@@ -4,21 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
     android:layout_marginTop="80dp"
+    android:orientation="vertical"
 
-    tools:context="com.rudigo.android.maths.ProgramActivity">
+    tools:context="com.rudigo.android.maths.ProgramOptionFragment">
 
     <Button
         android:id="@+id/btnFoundation"
         style="@style/buttonStyle"
-        android:text="Foundation Programs" />
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:text="@string/foundation_programs" />
 
     <Button
         android:id="@+id/btnMain"
         style="@style/buttonStyle"
         android:layout_marginTop="20dp"
-        android:text="Main Programs" />
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/main_programs" />
+
+
 </LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnModule1"
+        style="@style/buttonStyle"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:text="@string/essence_of_the_foundation_programs" />
+
+    <Button
+        android:id="@+id/btnModule2"
+        style="@style/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/counting_writing_and_spelling_of_numbers" />
+
+    <Button
+        android:id="@+id/btnModule3"
+        style="@style/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/number_grouping_and_arrangement" />
+
+    <Button
+        android:id="@+id/btnModule4"
+        style="@style/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/development_of_number_systems" />
+
+    <Button
+        android:id="@+id/btnModule5"
+        style="@style/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/basic_operations" />
+
+    <Button
+        android:id="@+id/btnModule6"
+        style="@style/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/icon_selector"
+        android:enabled="false"
+        android:text="@string/foundation_program_tests" />
+
+
+</LinearLayout>

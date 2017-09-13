@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:orientation="vertical"
+    tools:context="com.rudigo.android.maths.BeginnerLevelCounting">
+
+    <TextView
+        android:id="@+id/step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="Step 3"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/step_text_body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="@string/alc_step3_text"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/step_text_body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="1001 1002 1003 1004 1005.... 1010"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/step_text_body3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="sans-serif"
+        android:padding="4dp"
+        android:text="1011 1012 1013 1014 1015.... 1020"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/alc_step_continueButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:text="@string/continue_text"
+            android:textAllCaps="false" />
+
+
+    </FrameLayout>
+
+
+</LinearLayout>
