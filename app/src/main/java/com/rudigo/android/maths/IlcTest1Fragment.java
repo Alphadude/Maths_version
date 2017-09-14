@@ -66,8 +66,8 @@ public class IlcTest1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         View rootView = inflater.inflate(R.layout.blc_test_fragment, container, false);
 
-         Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
-         Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
+        Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
+        Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
 
         if (getArguments() != null) {
             continueButton.setText("Start a New lesson");
@@ -216,8 +216,11 @@ public class IlcTest1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //go back to lesson IlcLesson1Fragment
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+
                 frag = new IlcLesson1Fragment();
-                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                fragTransaction.replace(R.id.main_container, frag);
                 fragTransaction.addToBackStack(null);
                 fragTransaction.commit();
             }
@@ -226,17 +229,21 @@ public class IlcTest1Fragment extends Fragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(getArguments() != null){
+                if (getArguments() != null) {
                     //go to Lesson 3A
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new IlcLesson3AFragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                     Toast.makeText(getActivity(), "in lesson 3a", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     //go to Lesson 2
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new IlcLesson2AFragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                 }

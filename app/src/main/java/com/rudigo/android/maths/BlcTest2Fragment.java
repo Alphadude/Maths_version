@@ -47,9 +47,6 @@ public class BlcTest2Fragment extends Fragment {
     private final int REQUEST_SPEECH_CODE = 143;
 
 
-
-
-
     //These variables are used to display the fragments
     Fragment frag;
     FragmentTransaction fragTransaction;
@@ -80,8 +77,6 @@ public class BlcTest2Fragment extends Fragment {
         //Register the broadcast receiver with Intent action CONNECTIVITY_ACTION
         //Broadcast receiver's onReceive will be called once a network happens
         getActivity().registerReceiver(mReceiver, filter);
-
-
 
 
         final Button repeatLesson2Button = rootView.findViewById(R.id.repeatLesson1Btn);
@@ -167,13 +162,19 @@ public class BlcTest2Fragment extends Fragment {
             public void onClick(View view) {
                 if (getActivity().getIntent().hasExtra("changeBtn")) {
                     //go to BlcLesson4aFragment
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+
                     frag = new BlcLesson4aFragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                 } else {
+
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new BlcLesson3aFragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                 }
@@ -183,32 +184,23 @@ public class BlcTest2Fragment extends Fragment {
         return rootView;
     }
 
-    private void recordSpeech(){
+    private void recordSpeech() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,"Speak the number clicked");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak the number clicked");
 
         try {
 
             startActivityForResult(intent, REQUEST_SPEECH_CODE);
 
-        }catch(ActivityNotFoundException tim){
+        } catch (ActivityNotFoundException tim) {
             Toast.makeText(getContext(), "You device does not support speech to text", Toast.LENGTH_SHORT).show();
 
         }
 
     }
 
-
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        //unRegisters the broadcast receiver whent the activity goes to the background
-//        if (mReceiver != null) {
-//            getActivity().unregisterReceiver(mReceiver);
-//        }
-//    }
 
     @Override
     public void onDestroyView() {
@@ -224,10 +216,10 @@ public class BlcTest2Fragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode){
+        switch (requestCode) {
             case REQUEST_SPEECH_CODE:
-                if(resultCode == RESULT_OK && data !=null ){
-                    ArrayList<String> voiceInText =data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                if (resultCode == RESULT_OK && data != null) {
+                    ArrayList<String> voiceInText = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     Toast.makeText(getContext(), voiceInText.get(0), Toast.LENGTH_SHORT).show();
 
                 }
@@ -235,6 +227,7 @@ public class BlcTest2Fragment extends Fragment {
 
         }
     }
+
     //Broadcast receiver whose onReceive will be called whenever a network event such as
     //network disconnected or network connected takes place
     //The Broadcast Receiver is registered in the onCreate with Intent action CONNECTIVITY_ACTION
@@ -244,7 +237,7 @@ public class BlcTest2Fragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             //get active network info structure
 
-            isNetworkAvailable =activeNetwork != null &&(
+            isNetworkAvailable = activeNetwork != null && (
                     mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
                             mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
 

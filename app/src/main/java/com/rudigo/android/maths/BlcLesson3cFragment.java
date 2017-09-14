@@ -56,6 +56,7 @@ public class BlcLesson3cFragment extends Fragment {
                 intent.putExtra("changeButton", "changeButton");
                 startActivity(intent);
 
+
             }
         });
         return rootView;

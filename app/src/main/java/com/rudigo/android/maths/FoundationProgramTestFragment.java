@@ -42,9 +42,12 @@ public class FoundationProgramTestFragment extends Fragment {
                 if (editText.getText().toString().trim().equalsIgnoreCase("ten")) {
                     Toast.makeText(getActivity(), "You passed, Main Program Option unlocked!", Toast.LENGTH_SHORT).show();
                     bundle.putString("loya", "loya");
+
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new ProgramOptionFragment();
                     frag.setArguments(bundle);
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
 

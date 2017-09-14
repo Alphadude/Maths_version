@@ -57,7 +57,6 @@ public class IlcLesson3iFragment extends Fragment {
         Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
 
 
-
         repeatButton.setVisibility(View.GONE);
 
         ttsObject = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
@@ -74,7 +73,7 @@ public class IlcLesson3iFragment extends Fragment {
         });
 
 
-       tv.setText("Activity ");
+        tv.setText("Activity ");
         numbers = new ArrayList<>();
         for (int i = 501; i <= 600; ++i) {
             numbers.add(i);
@@ -203,19 +202,18 @@ public class IlcLesson3iFragment extends Fragment {
         });
 
 
-
-
-
         continueButton.setOnClickListener(new View.OnClickListener()
 
         {
             @Override
             public void onClick(View view) {
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
 
-                    frag = new IlcLesson3jFragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
-                    fragTransaction.addToBackStack(null);
-                    fragTransaction.commit();
+                frag = new IlcLesson3jFragment();
+                fragTransaction.replace(R.id.main_container, frag);
+                fragTransaction.addToBackStack(null);
+                fragTransaction.commit();
             }
         });
 

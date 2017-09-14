@@ -66,8 +66,8 @@ public class IlcTest2eFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         View rootView = inflater.inflate(R.layout.blc_test_fragment, container, false);
 
-         Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
-         Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
+        Button repeatButton = rootView.findViewById(R.id.repeatLesson1Btn);
+        Button continueButton = rootView.findViewById(R.id.blcTestContinueBtn);
 
         repeatButton.setText("Repeat Lesson 1LC 3A");
 
@@ -114,7 +114,6 @@ public class IlcTest2eFragment extends Fragment {
         numberText.add("six hundred and ten");
 
 
-
         numberAdapter = new ArrayAdapter<Integer>(getContext(), android.R.layout.simple_list_item_1, numbers);
         gridView = rootView.findViewById(R.id.test_gridView);
         gridView.setAdapter(numberAdapter);
@@ -124,8 +123,10 @@ public class IlcTest2eFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 //go back to lesson IlcLesson1Fragment
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                 frag = new IlcLesson3AFragment();
-                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                fragTransaction.replace(R.id.main_container, frag);
                 fragTransaction.addToBackStack(null);
                 fragTransaction.commit();
             }
@@ -135,12 +136,14 @@ public class IlcTest2eFragment extends Fragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                   //go to Lesson 2
-                   frag = new IlcTest2fFragment();
-                   fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
-                   fragTransaction.addToBackStack(null);
-                   fragTransaction.commit();
-               }
+                //go to Lesson 2
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+                frag = new IlcTest2fFragment();
+                fragTransaction.replace(R.id.main_container, frag);
+                fragTransaction.addToBackStack(null);
+                fragTransaction.commit();
+            }
 
         });
 

@@ -30,14 +30,13 @@ public class SpellingNumber1Fragment extends Fragment {
         Button continueButton = rootView.findViewById(R.id.spelling_continueButton);
 
 
-
-
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                 frag = new SpellingNumber2Fragment();
-                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                fragTransaction.replace(R.id.main_container, frag);
                 fragTransaction.addToBackStack(null);
                 fragTransaction.commit();
 

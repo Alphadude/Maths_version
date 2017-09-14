@@ -159,21 +159,15 @@ public class BlcTest4Fragment extends Fragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //goto fragment...
-                //go to Lesson 2
-//                Intent intent = new Intent(getActivity(), BlcLesson2Activity.class);
-//                startActivity(intent);
-
-              //  Toast.makeText(getContext(),"Goto  25", Toast.LENGTH_SHORT).show();
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                 frag = new BlcLesson4cFragment();
-                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                fragTransaction.replace(R.id.main_container, frag);
                 fragTransaction.addToBackStack(null);
                 fragTransaction.commit();
 
             }
         });
-
-
         return rootView;
     }
 
@@ -210,16 +204,6 @@ public class BlcTest4Fragment extends Fragment {
         }
     }
 
-
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        //unRegisters the broadcast receiver whent the activity goes to the background
-//        if (mReceiver != null) {
-//            unregisterReceiver(mReceiver);
-//        }
-//    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -238,7 +222,7 @@ public class BlcTest4Fragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             //get active network info structure
 
-            isNetworkAvailable =activeNetwork != null &&(
+            isNetworkAvailable = activeNetwork != null && (
                     mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnectedOrConnecting() ||
                             mConnMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnectedOrConnecting());
 
@@ -247,17 +231,11 @@ public class BlcTest4Fragment extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     if (isNetworkAvailable) {
                         Toast.makeText(getContext(), "Network Available", Toast.LENGTH_SHORT).show();
-
                         recordSpeech();
-                        //speech to text
-                        Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
-                        //increment if text matches
-
+                        // Toast.makeText(getContext(), numberText.get(position), Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getContext(), "Network not available", Toast.LENGTH_SHORT).show();
-
                     }
-
                 }
             });
 

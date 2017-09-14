@@ -31,10 +31,13 @@ public class BlcInstruction1Fragment extends Fragment {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fragTransaction = getFragmentManager().beginTransaction();
+                fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                 frag = new BlcInstruction2Fragment();
-                fragTransaction = getFragmentManager().beginTransaction().replace(R.id.blc_mainContainer, frag);
-                fragTransaction.commit();
+                fragTransaction.replace(R.id.blc_mainContainer, frag);
                 fragTransaction.addToBackStack(null);
+                fragTransaction.commit();
+
             }
         });
         return rootView;

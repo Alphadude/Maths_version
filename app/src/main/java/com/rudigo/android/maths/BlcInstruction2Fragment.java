@@ -39,17 +39,23 @@ public class BlcInstruction2Fragment extends Fragment {
             public void onClick(View v) {
                 if (radioBtn2.isChecked()) {
                     //go to next fragment
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new BlcTest1Fragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.blc_mainContainer, frag);
-                    fragTransaction.commit();
+                    fragTransaction.replace(R.id.blc_mainContainer, frag);
                     fragTransaction.addToBackStack(null);
+                    fragTransaction.commit();
                 } else {
                     Toast.makeText(getContext(), "You failed! Answer again", Toast.LENGTH_SHORT).show();
                     //recreate fragment
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
+
                     frag = new BlcInstruction2Fragment();
                     fragTransaction = getFragmentManager().beginTransaction().replace(R.id.blc_mainContainer, frag);
-                    fragTransaction.commit();
                     fragTransaction.addToBackStack(null);
+                    fragTransaction.commit();
+
                 }
             }
         });

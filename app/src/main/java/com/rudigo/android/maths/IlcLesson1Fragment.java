@@ -220,14 +220,19 @@ public class IlcLesson1Fragment extends Fragment {
                     //has bundle extra, change button text
 
                     bundle.putString("val", "val");
+
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new IlcTest1Fragment();
                     frag.setArguments(bundle);
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                 }else{
+                    fragTransaction = getFragmentManager().beginTransaction();
+                    fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                     frag = new IlcTest1Fragment();
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+                    fragTransaction.replace(R.id.main_container, frag);
                     fragTransaction.addToBackStack(null);
                     fragTransaction.commit();
                 }
@@ -248,8 +253,10 @@ public class IlcLesson1Fragment extends Fragment {
     }
 
     private void repeat() {
+        fragTransaction = getFragmentManager().beginTransaction();
+        fragTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
         frag = new IlcLesson1Fragment();
-        fragTransaction = getFragmentManager().beginTransaction().replace(R.id.main_container, frag);
+        fragTransaction.replace(R.id.main_container, frag);
         fragTransaction.addToBackStack(null);
         fragTransaction.commit();
 

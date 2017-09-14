@@ -249,16 +249,6 @@ public class BlcTestFragment extends Fragment {
         }
     }
 
-
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        //unRegisters the broadcast receiver whent the activity goes to the background
-//        if (mReceiver != null) {
-//            unregisterReceiver(mReceiver);
-//        }
-//    }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
